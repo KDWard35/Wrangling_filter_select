@@ -202,7 +202,9 @@ See if you can answer these questions:
 1. How many movies were released in 1995?
 
 ```{r}
-
+movies %>%
+  filter(year == 1995) %>%
+  summarise(n_movies = n())
 ```
 
 2. Which Comedies with an MPAA rating, over 120 minutes have a rating above 8?
