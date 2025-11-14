@@ -206,13 +206,17 @@ movies %>%
   filter(year == 1995) %>%
   summarise(n_movies = n())
 ```
-
+1248 movies were released in 1995.
 2. Which Comedies with an MPAA rating, over 120 minutes have a rating above 8?
-
 ```{r}
+movies %>%
+  filter(Comedy == 1, rating > 8, length > 120, mpaa>0) %>%
+  select(title, rating, length,mpaa)
+
+
 
 ```
-
+The comedies with with an MPAA rating, over 120 minutes have a rating above 8 are Big Fish, Forrest Gump, O Homem Que Copiava, and The Incredibles.
 3. Create a subset of only Harry Potter movies with the title, rating, budget, and votes. Which movies are included in this data? Which is highest rated? Which has the most votes on imdb.com?
 
 ```{r}
